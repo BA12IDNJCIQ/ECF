@@ -1,0 +1,36 @@
+/* GENERAL */
+:root{
+    --main-color:#D42F24;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+body{
+    background-image: url(../imgs/cover2.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center; 
+    background-attachment: fixed; 
+    background-color: #f0f0f0; 
+}
+/* START FORM */
+form{
+    margin: 15% auto;
+    width: 70%;
+    height: 200px;
+   
+}
+form div{
+    padding-bottom: 20px;
+}
+.Erreur{
+    color: red;
+    margin: 10px 0;
+    text-align: center;
+}
+/* END FORM */

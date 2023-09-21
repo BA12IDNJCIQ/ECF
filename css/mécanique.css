@@ -1,0 +1,329 @@
+/* variables */
+:root{
+    --main-color:#D42F24 ;
+    --second-color: #8D918D;
+    --third-color : #D5C6C6;
+}
+*{
+    box-sizing: border-box;
+    font-family: open , sans-serif;
+
+}
+@media(max-width: 991px){
+   .sidebar{
+       background-color: rgba(255, 255, 255, 0.15);
+       backdrop-filter:blur(10px);
+   }
+}
+.clearfix{
+   clear: both;
+}
+
+/* Start landing page */
+.landing-page{
+    min-height: 100vh;
+    background-image: url(../imgs/mecanicien-2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* .navbar{
+     background-color: transparent !important;
+} */
+.landing-page .navbar .navbar-toggler{
+    background-color: #D5C6C6;
+
+}
+.navbar .login{
+   color: var(--main-color);
+   font-weight: bold;
+}
+.landing-page .intro{
+    margin: 100px auto;
+    width: 70%;
+    height: 200px;
+    background-color: rgb(179 57 57 / 40%);
+    border: 3px solid var(--main-color);
+    border-radius: 15px;
+}
+.landing-page h2{
+    padding: 20px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+.landing-page p{
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: white;
+}
+/* END LANDINE PAGE */
+
+/* START FEATURES */
+.features{
+    padding-top: 50px;
+    padding-bottom: 50px ;
+    background-color: var(--third-color);
+    margin-bottom: 20px;
+    margin-top: 20px;
+ }
+ .features .features-content{
+    position: relative;
+    overflow: hidden;
+ }
+ .features .features-content:before{
+    content: '';
+    width: 2px;
+    height: 100%;
+    background-color: var(--main-color);
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+    top: 0;
+ }
+ .features .features-content .year{
+    margin: 20px auto;
+    width: 50px;
+    background-color: var(--main-color);
+    position: relative;
+    z-index: 2;
+    border-radius: 4px;
+    text-align: center;
+    color: var(--second-color);
+    padding: 2px 5px;
+    font-weight: bold;
+ 
+ }
+ .features .features-content .left ,
+ .features .features-content .right
+ {width: calc(50% - 25px);
+    margin-bottom: 40px;
+    position: relative;
+ 
+ }
+ .features .features-content .left{
+    float: left;
+ }
+ .features .features-content .left:before{
+    
+    right: -34px;
+    
+ }
+ 
+ .features .features-content .right{
+    float: right;
+ }
+ .features .features-content .right:before{
+    left: -34px;
+ }
+ 
+ 
+ .features .features-content .right:before,
+ .features .features-content .left:before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 20px;
+    
+    border: 3px solid var(--main-color);
+    background-color: var(--second-color);
+ }
+ @media (max-width : 767px){
+   .features .features-content .right,
+ .features .features-content .left{
+   width: 100%;
+   margin-bottom : 20px
+ }
+ .features .features-content .right:before,
+ .features .features-content .left:before{
+   display: none;
+ }
+ }
+ .clearfix{
+    clear: both;
+ }
+ 
+ .features .features-content .content{
+    background-color: white;
+    padding: 20px;
+ 
+ }
+ .features .features-content .content h3{
+    font-weight: bold;
+    color: var(--main-color);
+    text-align: center;
+ }
+ .features .features-content .content p{
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+ }
+ .features .features-content .content img{
+   width: 100%;
+   height: 100%;
+ }
+
+ .features .features-content .left .content:before{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent transparent transparent var(--second-color);
+    height: 0;
+    width: 0;
+    right: -20px;
+    top: 20px;
+ } 
+ .features .features-content .right .content:before{
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 10px;
+    border-color:  transparent var(--second-color)transparent transparent ;
+    height: 0;
+    width: 0;
+    left: -20px;
+    top: 20px;
+ } 
+ 
+ 
+ /* End FEATURES */
+ /* start contact-us */
+.contact{
+   background-color: var(--third-color);
+   min-height: 600px;
+   padding-top: 80px;
+   padding-bottom: 80px;
+   position: relative;
+}
+.contact .overlay{
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgb(255 , 255 , 255 , .6);
+   /* background-color: rgb(255 255  255  / 60%); */
+
+}
+.contact .container{
+   position: relative;
+   z-index: 2;
+}
+.contact h2{
+   font-weight: bold;
+   font-size: 30px;
+   color: var(--main-color);
+   margin: 0 0 10px;
+   text-align: center;
+   }
+.contact form{
+      overflow: hidden;
+      padding: 10px;
+   }
+.contact form .left{
+float: left;
+width: 49%;
+   }
+   .contact form .right{
+float: right;
+width: 49%;
+   }
+@media (max-width : 767px){
+  .contact form .right ,
+  .contact form .left {
+     float: none;
+     width: 100%;
+
+  }
+   }
+   .contact form .left input:not([type="submit"]) ,
+   .contact form .right textarea {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border:1px solid #ccc;
+      background-color: rgba(218 , 218 , 218 , 0.19);
+   }
+   .contact form .left input:not([type="submit"]):focus ,
+   .contact form .right textarea:focus{
+      outline: 1px solid var(--main-color);
+   }
+   .contact form input{
+      height: 40px;
+   }
+   .contact form textarea{
+      height: 150px;
+   }
+   .contact form input[type="submit"]{
+      padding-left: 10px;
+      width: 100%;
+      border-color: transparent;
+      background-color: var(--main-color);
+      color: #fff;
+      cursor: pointer;
+   }
+   .contact form textarea:focus::-webkit-input-placeholder , 
+   .contact form .left input:not([type="submit"]):focus::-webkit-input-placeholder{
+      opacity: 0;
+      transition: .3s;
+   }
+   .contact form textarea:focus:-ms-input-placeholder , 
+   .contact form .left input:not([type="submit"]):focus:-ms-input-placeholder{
+      opacity: 0;
+      transition: .3s;
+   }
+   .contact form textarea:focus::placeholder , 
+   .contact form .left input:not([type="submit"]):focus::placeholder{
+      opacity: 0;
+      transition: .3s;
+   }
+   .footer{
+     margin: 40px;
+   }
+   @media (max-width : 991px){
+      .footer > .row{
+         display: block;
+      }
+   
+   
+    }
+    @media(max-width : 767px){
+      .footer iframe , .footer .horaires {
+         width: 70%;
+         margin-right: 50px;
+         margin-top: 25px;
+      }
+
+    }
+   
+   
+   .horaires h3{
+     font-weight: bold;
+     font-size: 30px;
+     color: var(--main-color);
+     margin: 0 0 10px;
+     text-align: center;
+   }
+   .horaires li{
+     list-style: none;
+     text-align: left;
+     font-size: 30px;
+ 
+   }
+   @media (max-width : 991px){
+  .horaires li {
+     font-size: 15px;
+     text-align: center;
+  }
+  .horaires h3{
+     font-size: 25px;
+  }
+   }
+
+/* end contact-us */
+
+
+

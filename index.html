@@ -1,0 +1,559 @@
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 ">
+    
+    <title>Garrage Parrot</title>
+    <!-- bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!-- JQUERY LIBRAIRIE -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style.css">
+
+      <!-- fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" >
+  </head>
+  <body >
+ 
+    <!-- Start landing Page -->
+    <div class="landing-page ">
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark-bg-transparent ">
+      <div class="container">
+        <!-- logo -->
+        <img src="imgs/logo-2.png " style="width: 150px; ;" alt="logo">
+        <!-- toogle Btn -->
+        <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Sidebar -->
+        <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <!-- sidebar-header -->
+          <div class="offcanvas-header text-white border-bottom">
+            <h4 class="offcanvas-title" id="offcanvasNavbarLabel">V.Parrot</h4>
+            <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <!-- sidebar-body -->
+          <div class="offcanvas-body d-flex  flex-column flex-lg-row p-4 p-lg-0">
+            <ul class="navbar-nav text-black justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link  text-black active"  aria-current="page" href="index.html" >Home</a>
+              </li>
+              <li class="nav-item text-black mx-2">
+                <a class="nav-link text-black"  href="#vente">Vente</a>
+              </li>
+              <li class="nav-item text-black mx-2">
+                <a class="nav-link " href="mécanique.html" target="_blank" >Mecanique</a>
+              </li>
+              <li class="nav-item text-black mx-2">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+              
+            </ul>
+            <!-- Login / Sign-up -->
+            <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3">
+              <a href="login.html" class=" login text-decoration-none" target="_blank">Login</a>
+              <a href="#Sign-up" class=" sign-up text-white text-decoration-none px-3 py-1  rounded-4" style="background-color: var(--main-color);">Sign Up</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+    <section class="about-us">
+    
+      <h1 class="title text-center" >Nous sommes qui?</h1>
+      <p class=" container p-40px text-white text-center" >Bienvenue chez notre agence automobile polyvalente, votre destination complète pour tous vos besoins en matière d'automobile ! Nous sommes fiers de vous offrir une gamme de services diversifiés pour répondre à toutes vos exigences. Notre équipe compétente de mécaniciens qualifiés est prête à prendre soin de votre véhicule, que ce soit pour des réparations mécaniques ou des travaux de carrosserie, afin de lui redonner sa splendeur d'origine. De plus, si vous êtes à la recherche de votre prochaine voiture d'occasion, nous disposons d'une sélection soigneusement choisie, allant des modèles récents aux classiques intemporels. Chez nous, vous trouverez l'expertise, la qualité et le service personnalisé dont vous avez besoin pour prendre la route en toute confiance. Faites confiance à notre agence automobile pour faire rouler vos rêves</p>
+    
+    
+  </section>
+
+    <div class="clearfix"></div>
+</div>
+
+<!--  End landing pag -->
+<!-- Start Vente -->
+<!-- FILTRER LES RECHERCHES -->
+<h2 class=" text-center ">Acheter en Occasion</h2>
+<div id="filtre" class="container d-flex f-row f-5 align-items-center">
+<label id="marque" class="rounded-4" for="marque">Marque:</label>
+<select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+  <option selected>Choisir ....</option>
+  <option value="TOYOTA">TOYOTA</option>
+  <option value="CITROEN">CITROEN</option>
+  <option value="MERCIDES">MERCIDES</option>
+  <option value="PEUGEOT">PEUGEOT</option>
+  <option value="DACIA">DACIA</option>
+  <option value="LAND-ROVER">LAND-ROVER</option>
+</select>
+
+
+<label id="prix" class="rounded-4 text-center"  for="prixMax">Prix </label>
+    <input type="number" id="prixMax" placeholder="Prix maximum">
+
+    <button id="btn-filtre" style="background-color: var(--main-color); margin:20px" class=" text-white rounded-4 btn btn-outline-secondary" type="button">filtrer</button>
+
+    <div id="resultats">
+
+    </div>
+  </div>
+    <!-- END FILTRE -->
+
+<section id="vente">
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+  <div class="col">
+    <div class="card h-100">
+      <img src="imgs/blache.jpg"  style="height: 400px;" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h4 class="card-title">Voiture</h4>
+        <ul>
+          <li>citroen</li>
+          <li>160.362 Km</li>
+          <li>5000€</li>
+          <li>A.C : 20010</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <button type="button" id="open-1" class="btn btn-primary">Plus ...</button>
+      </div>
+  </div>
+
+  </div>
+
+  <div class="col">
+    <div class="card h-100">
+      <img src="imgs/citroen.jpeg" style="height: 400px;" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h4 class="card-title">Voiture</h4>
+        <ul>
+          <li>citroen</li>
+          <li>230.000 Km</li>
+          <li>4000€</li>
+          <li>A.C : 2005</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <button type="button" id="open-2" class="btn btn-primary">Plus ...</button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="imgs/jaguar.jpg" style="height: 400px;" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h4 class="card-title">voiture</h4>
+        <ul>
+          <li>citroen</li>
+          <li>120.000 Km</li>
+          <li>8000 €</li>
+          <li>A.C : 2008</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <button type="button" id="open-3" class="btn btn-primary">Plus ...</button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="imgs/mercides.jpg" style="height: 400px;"  class="card-img-top" alt="...">
+      <div class="card-body">
+        <h4 class="card-title">Voiture</h4>
+        <ul>
+          <li>Mercides</li>
+          <li>100.362 Km</li>
+          <li>9000 €</li>
+          <li>A.C : 2010</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <button type="button" id="open-4" class="btn btn-primary">Plus ...</button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="imgs/peugeot.jpeg" style="height: 400px;" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h4 class="card-title">Voiture</h4>
+        <ul>
+          <li>peugeot</li>
+          <li>120.362 Km</li>
+          <li>9000€</li>
+          <li>A.C : 2001</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <button type="button" id="open-5"  class="btn btn-primary">Plus ...</button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="imgs/toyota.jpg" style="height: 400px;"  class="card-img-top " alt="...">
+      <div class="card-body">
+        <h4 class="card-title">Voiture</h4>
+        <ul>
+          <li>Toyota</li>
+          <li>200000 Km</li>
+          <li>4000€</li>
+          <li>A.C : 2001</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <button type="button" id="open-6" class="btn btn-primary">Plus ...</button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="imgs/land-rover.jpeg" style="height: 400px;"  class="card-img-top " alt="...">
+      <div class="card-body">
+        <h4 class="card-title">Voiture</h4>
+        <ul>
+          <li>land Rover</li>
+          <li>130.000 Km</li>
+          <li>9000€</li>
+          <li>A.C : 2008</li>
+        </ul>
+      </div>
+      <div class="card-footer">
+        <button type="button" id="open-7" class="btn btn-primary">Plus ...</button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="imgs/Dacia-Dokker.jpg" style="height: 400px;"  class="card-img-top " alt="...">
+      <div class="card-body">
+        <h4 class="card-title">Voiture</h4>
+        <ul>
+          <li>Dacia</li>
+          <li>110.000 Km</li>
+          <li>7000€</li>
+          <li>A.C : 2005</li>
+          
+        </ul>
+      </div>
+      <div class="card-footer">
+        <button type="button" id="open-8" class="btn btn-primary">Plus ...</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="popup-box" id="popup-1">
+  <div class="card h-100">
+    <img src="imgs/blache.jpg"  style="height: 400px;" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h4 class="card-title">Voiture</h4>
+      <ul class="text-center">
+        <li>La marque : Citroen</li>
+        <li>kilométrage : 160.000 Km</li>
+        <li>couleur:blanc</li>
+        <li>Type de boite : manuelle</li>
+        <li>Carburant : Essence</li>
+        <li>4000€</li>
+      </ul>
+      <span class="liv">
+        livraison gratuit sous 8 jours
+      </span>
+      <button type="button" id="close-1" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  
+  
+  </div>
+</div>
+<div class="popup-box"  id="popup-2">
+  <div class="card h-100">
+    <img src="imgs/citroen.jpeg"  style="height: 400px;" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h4 class="card-title">Voiture</h4>
+      <ul class="text-center">
+        <li>La marque : Citroen</li>
+        <li>kilométrage : 230.000 Km</li>
+        <li>couleur:gris</li>
+        <li>Type de boite : manuelle</li>
+        <li>Carburant : Essence</li>
+        <li>3000€</li>
+      </ul>
+      <span class="liv">
+        livraison gratuit sous 8 jours
+      </span>
+      <button type="button" id="close-2"  class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+        
+      
+    </div>
+  
+  
+  </div>
+</div>
+<div class="popup-box" id="popup-3">
+  <div class="card h-100">
+    <img src="imgs/jaguar.jpg"  style="height: 400px;" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h4 class="card-title">Voiture</h4>
+      <ul class="text-center">
+        <li>La marque : Citroen</li>
+        <li>kilométrage : 120.000 Km</li>
+        <li>couleur: orange</li>
+        <li>Type de boite : automatique</li>
+        <li>Carburant : Diesel</li>
+        <li>8000€</li>
+      </ul>
+      <span class="liv text-center">
+        livraison gratuit sous 8 jours
+      </span>
+      <button type="button" id="close-3"  class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  
+  
+  </div>
+</div>
+<div class="popup-box"   id="popup-4">
+  <div class="card h-100">
+    <img src="imgs/mercides.jpg"  style="height: 400px;" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h4 class="card-title text-center ">Voiture</h4>
+      <ul class="text-center">
+        <li>La marque : mercides</li>
+        <li>kilométrage : 100.362 Km</li>
+        <li>couleur: jaune</li>
+        <li>Type de boite : automatique</li>
+        <li>Carburant : essence</li>
+        <li>9000€</li>
+
+      </ul>
+      <span class="liv">
+        livraison gratuit sous 8 jours
+      </span>
+      <button type="button" id="close-4"  class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  
+  
+  </div>
+</div>
+<div class="popup-box" id="popup-5">
+  <div class="card h-100">
+    <img src="imgs/peugeot.jpeg"  style="height: 400px;" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h4 class="card-title">Voiture</h4>
+      <ul class="text-center">
+        <li>La marque : peugeot</li>
+        <li>kilométrage : 120.100 Km</li>
+        <li>couleur:blanc</li>
+        <li>Type de boite : manuelle</li>
+        <li>Carburant : Essence</li>
+        <li>4000€</li>
+      </ul>
+      <span class="liv">
+        livraison gratuit sous 8 jours
+      </span>
+      <button type="button" id="close-5"  class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  
+  
+  </div>
+</div>
+<div class="popup-box"   id="popup-6">
+  <div class="card h-100">
+    <img src="imgs/toyota.jpg"  style="height: 400px;" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h4 class="card-title">Voiture</h4>
+      <ul class="text-center">
+        <li>La marque : toyota</li>
+        <li>kilométrage : 200.000 Km</li>
+        <li>couleur:blanc</li>
+        <li>Type de boite : manuelle</li>
+        <li>Carburant : Essence</li>
+        <li>4000€</li>
+      </ul>
+      <span class="liv">
+        livraison gratuit sous 8 jours
+      </span>
+      <button type="button" id="close-6" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  
+  
+  </div>
+</div>
+<div class="popup-box"  id="popup-7">
+  <div class="card h-100">
+    <img src="imgs/land-rover.jpeg"  style="height: 400px;" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h4 class="card-title">Voiture</h4>
+      <ul class="text-center">
+        <li>La marque : land rover</li>
+        <li>kilométrage : 130.000 Km</li>
+        <li>couleur:bleu</li>
+        <li>Type de boite : automatique</li>
+        <li>Carburant : Essence</li>
+        <li>9000€</li>
+      </ul>
+      <span class="liv">
+        livraison gratuit sous 8 jours
+      </span>
+      <button type="button" id="close-7"   class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  
+  
+  </div>
+</div>
+<div class="popup-box"  id="popup-8">
+  <div class="card h-100">
+    <img src="imgs/Dacia-Dokker.jpg"  style="height: 400px;" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h4 class="card-title">Voiture</h4>
+      <ul class="text-center">
+        <li>La marque : dacia dokker</li>
+        <li>kilométrage : 110.000 Km</li>
+        <li>couleur:bleu</li>
+        <li>Type de boite : manuelle</li>
+        <li>Carburant : diesel</li>
+        <li>7000€</li>
+      </ul>
+      <span class="liv">
+        livraison gratuit sous 8 jours
+      </span>
+      <button type="button" id="close-8"  class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  
+  
+  </div>
+</div>
+</section>
+<!-- End Vente -->
+
+   <!-- Start COMMENTS -->
+   <div class="comment">
+    <div class="container">
+        <h2 class="text-center">comment</h2>
+        <div class="ts-box">
+           <p>"Je tiens à exprimer ma profonde satisfaction pour le service exceptionnel que j'ai reçu dans votre garage automobile,  votre équipe a été incroyablement courtoise et professionnelle. J'ai été agréablement surpris par la qualité de votre service client. Merci beaucoup !"</p>
+           <div class="person-info">
+           
+            <h4>Berdi</h4>
+            <div class="rating">
+            <span>&#9733;</span>
+              <span>&#9733;</span>
+              <span>&#9733;</span>
+              <span>&#9733;</span>
+            </div>
+           </div>
+        </div>
+        <div class="ts-box">
+            <p>"Je suis un client fidèle de votre garage depuis des années, et à chaque visite, je suis impressionné par la compétence de votre équipe. Récemment, ma voiture a eu un problème mécanique majeur, et vous l'avez réparée comme neuve. Votre service est toujours fiable, et je recommande vivement votre garage à tous mes amis et ma famille."</p>
+            <div class="person-info">
+            
+             <h4>Philipe</h4>
+             <div class="rating">
+             <span>&#9733;</span>
+              <span>&#9733;</span>
+              <span>&#9733;</span>
+              <span>&#9733;</span>
+            </div>
+            </div>
+         </div>
+         <div class="ts-box">
+            <p>"Je tenais à vous remercier pour la réparation rapide de ma voiture. Votre équipe a fait un travail fantastique, et je suis reconnaissant pour votre professionnalisme et votre attention aux détails. De plus, votre garage est toujours propre et bien entretenu, ce qui renforce ma confiance en vos services. Merci de prendre soin de ma voiture comme si c'était la vôtre"</p>
+            <div class="person-info">
+             
+             <h4>Thomas</h4>
+             <div class="rating">
+              <span>&#9733;</span>
+              <span>&#9733;</span>
+              <span>&#9733;</span>
+              <span>&#9733;</span>
+              <span>&#9733;</span>
+          </div>
+            </div>
+         </div>
+         
+    </div>
+    <div class="right" style="z-index: 4;">
+      <textarea name="message" placeholder="Votre message"></textarea>
+      <input type="submit" value="envoyer">
+  </div>
+    <div class="clearfix"></div>
+  
+</div>
+
+<!-- End  COMMENTS -->
+
+<!-- START CONTACT -->
+<footer id="contact" class="contact">
+  <div class="overlay"></div>
+  <div class="container">
+      <h2>Contact us</h2>
+      <form action="">
+          <div class="left">
+              <input type="text" placeholder="votre nom" name="username">
+              <input type="number" placeholder="N° de téléphone" name="usernumber">
+              <input type="email" placeholder="Votre adresse mail" name="email">
+              <input type="text" placeholder="Objet" name="subject">
+          </div>
+          <div class="right">
+              <textarea name="message" placeholder="Votre message"></textarea>
+              <input type="submit" value="envoyer">
+          </div>
+      </form>
+  </div>
+  <div class="footer container text-center">
+    <div class="row">
+      <div class="col">
+       <!-- Start map -->
+       <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1ITKhXyptE6HZh44jf3miIZE73zJyXsI&ehbc=2E312F" width="640" height="480"></iframe>
+       <!-- End map -->
+      </div>
+      <div class="col horaires">
+        <h3>LES HORAIRES</h3>
+        <ul>
+          <li>lund: 8:45-12:00 , 14:00-18:00</li>
+          <li>Mard: 8:45-12:00 , 14:00-18:00</li>
+          <li>Merc: 8:45-12:00 , 14:00-18:00</li>
+          <li>Jeud: 8:45-12:00 , 14:00-18:00</li>
+          <li>Vend: 8:45-12:00 , 14:00-18:00</li>
+          <li>Same: 8:45-12:00 </li>
+          <li>Dima: fermé </li>
+        </ul>
+      </div>
+     
+    </div>
+  </div>
+</footer>
+<!-- END CONTACT -->
+    <!-- DOWNLOAD AJAX -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mo/1.7.3/network/ajax.js"></script>
+    <!-- Latest compiled JavaScript -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+   <script defer src="js/script.js"></script>
+   
+   <!-- ajax -->
+   <script src="js/ajax.js"></script>
+  </body>
+  
+</html>
